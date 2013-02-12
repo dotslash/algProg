@@ -1,10 +1,8 @@
-
-<!-- saved from url=(0045)http://www.codechef.com/viewplaintext/1827600 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body><pre>#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;string&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstdlib&gt;
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <cstdio>
+#include <cstdlib>
 
 using namespace std;
 
@@ -24,17 +22,17 @@ class BIT
        int old = prev[idx];
        prev[idx]=val;
        val = val-old;
-       while (idx &lt;= maxVal){
+       while (idx <= maxVal){
             tree[idx] += val;
-            idx += (idx &amp; -idx);
+            idx += (idx & -idx);
        }
     }
     //Returns the cumulative frequency of index idx
     int read(int idx){
         int sum=0;
-        while (idx&gt;0){
+        while (idx>0){
             sum += tree[idx];
-            idx -= (idx &amp; -idx);
+            idx -= (idx & -idx);
         }
         return sum;
     }
@@ -90,16 +88,16 @@ void colSet(int id,int val){
     CprevInd[id]=pres;
 }
 int main(){
-    cin&gt;&gt;n&gt;&gt;q;
+    cin>>n>>q;
     fill(RprevInd,RprevInd+q+5,1);
     fill(RprevVal,RprevVal+q+5,0);
     fill(CprevInd,CprevInd+q+5,1);
     fill(CprevVal,CprevVal+q+5,0);
     char s[100];
-    for (pres = 2; pres &lt;= (q+1); ++pres){
+    for (pres = 2; pres <= (q+1); ++pres){
         scanf("%s",s);
         if(s[3]=='S'){
-            scanf("%d %d",&amp;ind,&amp;val);
+            scanf("%d %d",&ind,&val);
             if(s[0]=='R'){
                 rowSet(ind,val);
             }
@@ -108,7 +106,7 @@ int main(){
             }
         }
         else{
-            scanf("%d",&amp;ind);
+            scanf("%d",&ind);
             if(s[0]=='R'){
                 rowQuery(ind);
             }
@@ -118,4 +116,3 @@ int main(){
         }
     }
 }
-</pre></body></html>
