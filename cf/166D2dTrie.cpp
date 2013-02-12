@@ -9,11 +9,11 @@ tolerance = 2
 => bb : good bbb: bad ab: good
 string length : upto 1500
 
-Add all the suffix strings of the input string into a trie
-while adding a suffix, count the number of bad chars in of 
-present prefix the suffix is less than tolerance and the 
-part of suffix is not seen upto now then increase the count
-of good substrings by one
+Add all the suffix strings of the input string into a trie.
+While adding a suffix, count the number of bad chars in the 
+present prefix of the suffix. If this is less than tolerance 
+and the part of suffix is not seen upto now then increase the 
+count of good substrings by one
 **********************************************************/
 #include <iostream>
 #include <string>
